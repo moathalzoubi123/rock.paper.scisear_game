@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+
+{% block content %}
+    <h3> player 1 and player 2 please pick ur choice </h3>
+
+    <form action="/game/result" method="post">
+
+        <label for="player1">player1</label>
+        <input list="choices" name="choice">
+        <datalist id="choices">
+                <option value="Rock">
+                <option value="Paper">
+                <option value="scissors">
+        </datalist>
+        <label for="player2">player1</label>
+        <input list="choicess" name="choice">
+        <datalist id="choicess">
+                <option value="Rock">
+                <option value="Paper">
+                <option value="scissors">
+        </datalist>
+
+        <input type="submit" value="show result">
+    </form>
+    {%endblock%} 
+
