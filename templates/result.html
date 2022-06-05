@@ -1,31 +1,15 @@
-{%extends "base.html"%}
+{% extens "base.html"%} 
 
-{% block content %}
-  <h1>the result</h1> 
+{% block contnet %} 
+<p>player_1 chose : {{player_1_choice}}</p> 
+<p>player_2 chose : {{player_2_choice}}</p> 
 
- {% if player1.choice == "Rock" and player2.choice== "Paper": 
-   return "palyer2 won"
-    elif player1.choice == "Rock" and player2.choice== "Scissors":
-   return "palyer1 won"
-  elif player1.choice == "Rock" and player2.choice== "Rock":
-   return "None"
+{% if winner == 'tie' %}
+<h1>There was a tie!</h1>
+<h2>Play again!</h2>
 
+{% else %}
+<h1>{{ winner }} WINS!</h1>
+ 
 
-  elif player1.choice == "Paper" and player2.choice== "Paper":
-   return "None"
-  elif player1.choice == "Paper" and player2.choice== "Scissors":
-   return "palyer2 won"
-  elif player1.choice == "Paper" and player2.choice== "Rock":
-   return "Player1 won"
-
-
- elif player1.choice == "Scissors" and player2.choice== "Paper":
-   return "palyer1 won"
- elif player1.choice == "Scissors" and player2.choice== "Scissors":
-   return "None"
- elif player1.choice == "Scissors" and player2.choice== "Rock":
-   return "player2 won" 
-{% endif %}    
-
-
-    {%endblock%} 
+{% endblock %}

@@ -9,18 +9,37 @@
 <body>
     <h1>Welcome to rock, paper, scissors game</h1>
 
+
+    <h3> player 1 and player 2 please pick ur choice </h3>
+
+    <form action="/<choice1>/<choice2>">
+
+        <label for="player1">player1</label>
+        <input list="choices" name="choice1">
+        <datalist id="choices">
+                <option value="Rock">
+                <option value="Paper">
+                <option value="Scissors">
+        </datalist>
+        <label for="player2">player2</label>
+        <input list="choicess" name="choice2">
+        <datalist id="choicess">
+                <option value="Rock">
+                <option value="Paper">
+                <option value="Scissors">
+        </datalist>
+
+        <input type="submit" value="show result">
+       
+    </form>
+    
+
+
+    
     {% block content%}
 
     {% endblock %}
 
-
-    <nav>
-        <ul>
-            <li>
-                <a href="/game">Go To The Game</a>
-            </li>
-        </ul>
-    </nav>
     <nav>
         <ul>
             <li>
@@ -28,5 +47,6 @@
             </li>
         </ul>
     </nav>
+
 </body>
 </html>

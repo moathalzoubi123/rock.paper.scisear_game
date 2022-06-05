@@ -12,18 +12,17 @@ def index():
     return render_template("base.html")
 
 
-@app.route('/game')
-def game():
-    return render_template("game.html", title= "Game")
-
 @app.route("/explain")
 def explain():
     return render_template("explain.html", title = "Explain")
 
-app.route("/game/result", methods=["POST"])
+
+@app.route("/<choice1>/<choice2>") 
 def result():
-    player_1= Player("moath", request.form["choice1"])
-    player_2= Player("adam", request.form["choice2"])
-    playerss = Game( player_1, player_2)
-    result(playerss)
-    return render_template("result.html", title= "Result", players= playerss) 
+    player_1_choice = request.form["choice1"]
+    player_2_choice = request.form["choice2"]
+    player_1 = Player("Moath", player_1_choice)
+    player_2 = Player("Adam", player_2_choice)
+    playerss = Game(player_1, player_2)
+    winner= result(playerss)
+    return render_template("result.html", title= "Result", winner=winner, player_1_choice= player_1_choice , player_2_choice=player_2_choice)  
