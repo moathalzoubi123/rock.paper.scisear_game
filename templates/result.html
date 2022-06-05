@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{% block content %}
+  <h1>the result</h1> 
+
+ {% if player1.choice == "Rock" and player2.choice== "Paper": 
+   return "palyer2 won"
+    elif player1.choice == "Rock" and player2.choice== "Scissors":
+   return "palyer1 won"
+  elif player1.choice == "Rock" and player2.choice== "Rock":
+   return "None"
+
+
+  elif player1.choice == "Paper" and player2.choice== "Paper":
+   return "None"
+  elif player1.choice == "Paper" and player2.choice== "Scissors":
+   return "palyer2 won"
+  elif player1.choice == "Paper" and player2.choice== "Rock":
+   return "Player1 won"
+
+
+ elif player1.choice == "Scissors" and player2.choice== "Paper":
+   return "palyer1 won"
+ elif player1.choice == "Scissors" and player2.choice== "Scissors":
+   return "None"
+ elif player1.choice == "Scissors" and player2.choice== "Rock":
+   return "player2 won" 
+{% endif %}    
+
+
+    {%endblock%} 
